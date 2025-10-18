@@ -1,7 +1,10 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react'  // updated to match package.json
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: '/hospital', // base path for Tomcat deployment
+  build: {
+    outDir: 'dist',       // ensure build output goes to dist/
+  },
 })
